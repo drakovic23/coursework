@@ -1,0 +1,60 @@
+Problem 1:
+
+digit = 9
+sum = 9
+n = 283
+iteration = 1
+
+digit = 3
+sum = 12
+n = 28
+iteration = 2
+
+digit = 8
+sum = 20
+n = 2
+iteration = 3
+
+digit = 2
+sum = 22
+n = 0
+iteration = 4
+
+print(22)
+print(4)
+
+
+Problem 2:
+Print(1)
+Print(2)
+Print(3)
+Print(4)
+Print(5)
+Print(22)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

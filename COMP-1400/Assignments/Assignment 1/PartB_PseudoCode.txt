@@ -1,0 +1,33 @@
+1. Start
+2. Show a Welcome message to the user
+3. Loop { for asking the user to select an option}
+	a) Show a prompt for the user selection
+	b) READ operationType
+	c) READ firstNum
+	d) READ operationUsed
+	c) READ secondNum
+	e) IF (operationUsed == +)
+		outputNum = firstNum + secondNum
+		WRITE "The result is " + outputNum
+	   ELSE IF (operationUsed == -)
+		outputNum = firstNum - secondNum
+		WRITE "The result is " + outputNum
+	   ELSE IF (operationUsed == *)
+		outputNum = firstNum * secondNum
+		WRITE "The result is " + outputNum
+	   ELSE IF (operationUsed == /)
+		outputNum = firstNum / secondNum
+		WRITE "The result is " + outputNum
+	   ELSE IF (operationUsed == %)
+		outputNum = firstNum % secondNum
+		WRITE "The result is " + outputNum
+	   ELSE IF (operationUsed == ^)
+		outputNum = pow(firstNum,secondNum)
+		WRITE "The result is " + outputNum
+	   ELSE IF (operationUsed == "X")
+		Exit loop/goto step 4
+	   ELSE
+		WRITE "Please enter one of the following symbols: ( + , - , * , /, %, ^):"
+ 4. End of loop
+ 5. Show a Goodbye message
+ 6. End

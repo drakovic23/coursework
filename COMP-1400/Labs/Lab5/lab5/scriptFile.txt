@@ -1,0 +1,35 @@
+Script started on 2021-10-26 10:29:49-04:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="165" LINES="11"]
+[?2004h]0;rakovic@alpha: ~/fall/comp1400/lab5[01;32mrakovic@alpha[00m:[01;34m~/fall/comp1400/lab5[00m$ gcc -Wall E1.c
+[?2004l[?2004h]0;rakovic@alpha: ~/fall/comp1400/lab5[01;32mrakovic@alpha[00m:[01;34m~/fall/comp1400/lab5[00m$ ./a.out 
+[?2004lPlease enter two numbers: 10  5 7   10 7
+Remainder of 10 divided by 7 is 3
+[?2004h]0;rakovic@alpha: ~/fall/comp1400/lab5[01;32mrakovic@alpha[00m:[01;34m~/fall/comp1400/lab5[00m$ ./a.out gcc -Wall E1.c[1P.c2.c
+[?2004l[?2004h]0;rakovic@alpha: ~/fall/comp1400/lab5[01;32mrakovic@alpha[00m:[01;34m~/fall/comp1400/lab5[00m$ gcc -Wall E2.c[6P./a.out 
+[?2004lPlease enter a number: 6
+6 is a even number
+[?2004h]0;rakovic@alpha: ~/fall/comp1400/lab5[01;32mrakovic@alpha[00m:[01;34m~/fall/comp1400/lab5[00m$ ./a.out 
+[?2004lPlease enter a number: 9
+9 is an odd number
+[?2004h]0;rakovic@alpha: ~/fall/comp1400/lab5[01;32mrakovic@alpha[00m:[01;34m~/fall/comp1400/lab5[00m$ ./a.out gcc -Wall E2.c[6P./a.out gcc -Wall E2.c[1P.c3.c
+[?2004l[?2004h]0;rakovic@alpha: ~/fall/comp1400/lab5[01;32mrakovic@alpha[00m:[01;34m~/fall/comp1400/lab5[00m$ 2000
+[?2004lbash: 2000: command not found
+[?2004h]0;rakovic@alpha: ~/fall/comp1400/lab5[01;32mrakovic@alpha[00m:[01;34m~/fall/comp1400/lab5[00m$ ./a.out 
+[?2004lPlease enter a number: 2000
+2000 is a leap year
+[?2004h]0;rakovic@alpha: ~/fall/comp1400/lab5[01;32mrakovic@alpha[00m:[01;34m~/fall/comp1400/lab5[00m$ ./a.out 
+[?2004lPlease enter a number: 1900
+1900 is a common year
+[?2004h]0;rakovic@alpha: ~/fall/comp1400/lab5[01;32mrakovic@alpha[00m:[01;34m~/fall/comp1400/lab5[00m$ ./a.out [4P2000gcc -Wall E3.c[1P.c4.c
+[?2004l[?2004h]0;rakovic@alpha: ~/fall/comp1400/lab5[01;32mrakovic@alpha[00m:[01;34m~/fall/comp1400/lab5[00m$ gcc -Wall E4.c[6P./a.out 
+[?2004lPlease enter your first number: 10
+Please enter your second number: 2
+Please enter your third number: 100
+The largest number is 100, and the smallest number is 2
+[?2004h]0;rakovic@alpha: ~/fall/comp1400/lab5[01;32mrakovic@alpha[00m:[01;34m~/fall/comp1400/lab5[00m$ ./a.out gcc -Wall E4.c[1P.c5.c
+[?2004l[?2004h]0;rakovic@alpha: ~/fall/comp1400/lab5[01;32mrakovic@alpha[00m:[01;34m~/fall/comp1400/lab5[00m$ ./a.out 
+[?2004lEnter the first twelve digits of ISBN-13: 978030640615
+The check digit for ISBN 978030640615, is 7 
+[?2004h]0;rakovic@alpha: ~/fall/comp1400/lab5[01;32mrakovic@alpha[00m:[01;34m~/fall/comp1400/lab5[00m$ exit
+[?2004lexit
+
+Script done on 2021-10-26 10:33:01-04:00 [COMMAND_EXIT_CODE="0"]

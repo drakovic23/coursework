@@ -1,0 +1,193 @@
+Script started on 2021-11-02 11:10:37-04:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="165" LINES="11"]
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab6[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab6[00m$ cat E1.c
+[?2004l#include <stdio.h>
+
+int main(void)
+{
+    int userInput;
+    int counter = 0;
+    int sum = 0;
+    int average = 0;
+
+    while(counter < 10)
+    {
+        puts("Please enter an integer:");
+        scanf("%d", &userInput);
+        sum += userInput;
+        counter++;
+    }
+
+    average = sum / 10;
+
+    printf("Sum: %d     Average: %d\n", sum, average);
+
+    return 0;
+}[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab6[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab6[00m$ gcc -Wall E1.c
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab6[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab6[00m$ ./a.out
+[?2004lPlease enter an integer:
+10
+Please enter an integer:
+20
+Please enter an integer:
+30
+Please enter an integer:
+40
+Please enter an integer:
+50
+Please enter an integer:
+60
+Please enter an integer:
+70
+Please enter an integer:
+80
+Please enter an integer:
+90
+Please enter an integer:
+100
+Sum: 550     Average: 55
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab6[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab6[00m$ ./a.outgcc -Wall E1.c[7P./a.out[Kcat E2.c
+[?2004l#include <stdio.h>
+
+int main(void)
+{
+    int num;
+    int isPrime = 1;
+
+    puts("Please enter an integer: ");
+    scanf("%d", &num);
+
+    if(num > 1)
+    {
+        for(int x=2; x < num;x++)
+        {
+            if(num % x == 0)
+            {
+                isPrime = 0;
+            }
+        }
+    }
+    
+    if(isPrime == 0 || num <= 1){
+        printf("%d is a composite number.\n",num);
+    }
+    else if(isPrime == 1)
+    {
+        printf("%d is a prime number.\n", num);
+    }
+
+    return 0;
+}[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab6[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab6[00m$ gcc -Wall E2.c
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab6[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab6[00m$ ./a.out
+[?2004lPlease enter an integer: 
+15
+15 is a composite number.
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab6[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab6[00m$ ./a.out
+[?2004lPlease enter an integer: 
+11
+11 is a prime number.
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab6[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab6[00m$ cat E3.c
+[?2004l#include <stdio.h>
+
+int main(void)
+{
+    int num;
+    puts("Please enter an integer: ");
+    scanf("%d", &num);
+
+    for(int x = 0;x < num;x++)
+    {
+        for(int i = 0; i <= x;i++)
+        {
+            printf("*");
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab6[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab6[00m$ gcc -Wall E3.c
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab6[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab6[00m$ ./a.out
+[?2004lPlease enter an integer: 
+5
+*
+**
+***
+****
+*****
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab6[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab6[00m$ cat E4.c
+[?2004l#include <stdio.h>
+
+int main(void)
+{
+    int num;
+    puts("Please enter an integer:");
+    scanf("%d", &num);
+
+    for(int x = 1; x <= 10; x++)
+    {
+        printf("%d X %d = %d\n",num, x, num * x );
+    }
+
+    return 0;
+}[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab6[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab6[00m$ gcc -Wall E4.c
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab6[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab6[00m$ ./a.out
+[?2004lPlease enter an integer:
+21
+21 X 1 = 21
+21 X 2 = 42
+21 X 3 = 63
+21 X 4 = 84
+21 X 5 = 105
+21 X 6 = 126
+21 X 7 = 147
+21 X 8 = 168
+21 X 9 = 189
+21 X 10 = 210
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab6[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab6[00m$ gcc[K[K[Kcat E5.c
+[?2004l#include <stdio.h>
+
+int main(void)
+{
+    int dayNum;
+    puts("Please enter day number in integer: ");
+    scanf("%d", &dayNum);
+
+    switch(dayNum)
+    {
+        case 1:
+            puts("Monday");
+            break;
+        case 2:
+            puts("Tuesday");
+            break;
+        case 3:
+            puts("Wednesday");
+            break;
+        case 4:
+            puts("Thursday");
+            break;
+        case 5:
+            puts("Friday");
+            break;
+        case 6:
+            puts("Saturday");
+            break;
+        case 7:
+            puts("Sunday");
+            break;
+        
+        default:
+            puts("Invalid day number");
+            break;
+    }
+
+    return 0;
+}[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab6[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab6[00m$ gcc -Wall E5.c
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab6[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab6[00m$ ./a.out
+[?2004lPlease enter day number in integer: 
+5
+Friday
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab6[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab6[00m$ exit
+[?2004lexit
+
+Script done on 2021-11-02 11:12:16-04:00 [COMMAND_EXIT_CODE="0"]

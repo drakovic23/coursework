@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Deni/OneDrive/Courses/Winter22/COMP-1410/Assignments/A3/main.c
+stdio.h
+-
+stdbool.h
+-
+stdlib.h
+-
+string.h
+-
+assert.h
+-
+

@@ -1,0 +1,9 @@
+A) "25 is not a perfect number."
+   "1 is a perfect number."
+   "0 is not a perfect number."
+   "6 is a perfect number."
+   "28 is a perfect number."
+
+
+
+

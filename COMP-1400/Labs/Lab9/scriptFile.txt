@@ -1,0 +1,132 @@
+Script started on 2021-11-23 10:29:53-05:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="237" LINES="9"]
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab9[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab9[00m$ cat PA[K[KpartA.c[K[K.c 
+[?2004l/*********************************************
+ * Author: Deni Rakovic                      *
+ * Date  : November 19, 2021                 *
+ * Title : Lab 9 Part A                      *
+ *********************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+double getAreaCircle(double r);
+
+int main(void)
+{
+    double radius;
+    //Get radius from user
+    puts("Please enter in radius: ");
+    scanf("%lf", &radius);
+    //Print out area
+    printf("Area of circle with radius %.2lf is: %.2lf\n", radius, getAreaCircle(radius));
+    return 0;
+}
+
+double getAreaCircle(double r)
+{
+    return M_PI * pow(r,2);
+}[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab9[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab9[00m$ gcc -Wall partA.c -lm
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab9[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab9[00m$ gcc [K[K[K[Kca[K[K,[K./a.out
+[?2004lPlease enter in radius: 
+5
+Area of circle with radius 5.00 is: 78.54
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab9[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab9[00m$ cat partB.c
+[?2004l/*********************************************
+ * Author: Deni Rakovic                      *
+ * Date  : November 19, 2021                 *
+ * Title : Lab 9 Part B                      *
+ *********************************************/
+
+#include <stdio.h>
+#include <math.h>
+
+long int factorial(unsigned int num); //Prototype
+
+int main(void)
+{
+    //The maximum value of an integer that we can calculate the factorial for is 20, so 21 would cause a overflow with a long int data type.
+    printf("Factorial of 2: %ld\n", factorial(2));
+    printf("Factorial of 3: %ld\n", factorial(3));
+    printf("Factorial of 4: %ld\n", factorial(4));
+    printf("Factorial of 5: %ld\n", factorial(5));
+    printf("Factorial of 10: %ld\n", factorial(10));
+    printf("Factorial of 15: %ld\n", factorial(15)); 
+    printf("Factorial of 21: %ld\n", factorial(21)); //This causes a overflow with a long int type
+
+    return 0;
+}
+
+long int factorial(unsigned int num)
+{
+    unsigned long int retValue = 1;
+    int counter = num;
+    //Calculate factorial
+    while(counter != 0)
+    {
+        retValue *= counter; 
+        counter--;
+    }
+    //Return value
+    return retValue;
+}[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab9[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab9[00m$ gcc -Wall partB.c -lm
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab9[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab9[00m$ ./a.out
+[?2004lFactorial of 2: 2
+Factorial of 3: 6
+Factorial of 4: 24
+Factorial of 5: 120
+Factorial of 10: 3628800
+Factorial of 15: 1307674368000
+Factorial of 21: -4249290049419214848
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab9[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab9[00m$ gcc -W[K[K[K[K[K[Kcat partC.c
+[?2004l/*********************************************
+ * Author: Deni Rakovic                      *
+ * Date  : November 19, 2021                 *
+ * Title : Lab 9 Part C                      *
+ *********************************************/
+
+#include <stdio.h>
+
+unsigned long int decimalToBinary(unsigned int num);
+
+int main(void)
+{
+    unsigned int num;
+    puts("Enter in a number to convert: ");
+    scanf("%d", &num);
+    printf("%ld\n", decimalToBinary(num));
+
+    return 0;
+}
+
+unsigned long int decimalToBinary(unsigned int num)
+{
+    unsigned long int binaryNum[512];
+    int counter = 0; //So we know how many elements are set in binaryNum
+    //Convert the decimal value to binary
+    while(num != 0)
+    {
+        binaryNum[counter] = num % 2;
+        num /= 2;
+        counter++;
+    }
+    
+    unsigned long int retValue = 0; //Our return value
+    //Backwards for loop because our array has the binary number from top to bottom
+    for(int x = counter - 1; x > -1;x--)
+    {
+        //Append digits
+        retValue = (retValue * 10) + binaryNum[x];
+    }
+    //Return value
+    return retValue;
+
+}[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab9[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab9[00m$ gcc -Wall partC.c -lm
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab9[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab9[00m$ ./a.out
+[?2004lEnter in a number to convert: 
+90250
+10110000010001010
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab9[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab9[00m$ exit
+[?2004lexit
+
+Script done on 2021-11-23 10:31:09-05:00 [COMMAND_EXIT_CODE="0"]

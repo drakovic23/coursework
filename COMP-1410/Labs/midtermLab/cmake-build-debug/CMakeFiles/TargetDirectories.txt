@@ -1,0 +1,3 @@
+C:/Users/Deni/OneDrive/Courses/Winter22/COMP-1410/Labs/midtermLab/cmake-build-debug/CMakeFiles/midtermLab.dir
+C:/Users/Deni/OneDrive/Courses/Winter22/COMP-1410/Labs/midtermLab/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Deni/OneDrive/Courses/Winter22/COMP-1410/Labs/midtermLab/cmake-build-debug/CMakeFiles/rebuild_cache.dir

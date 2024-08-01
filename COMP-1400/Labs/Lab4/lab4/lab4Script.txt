@@ -1,0 +1,207 @@
+Script started on 2021-10-22 17:49:16-04:00 [TERM="xterm-256color" TTY="/dev/pts/12" COLUMNS="162" LINES="11"]
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ cat la[K[K[K A_E1_Pseudo.txt 
+[?2004lprint Hello!\n
+print My name is: ** Deni Rakovic **\n
+print Field of Study: "History"\n
+print Thanks :)\n[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ cat A_E2.c
+[?2004l#include <stdio.h>
+
+int main(void)
+{
+	puts("Hello!");
+	char studentName[] = "Deni Rakovic";
+	char fieldOfStudy[] = "History";
+	printf("My name is: ** %s **\n", studentName);
+	printf("Field of Study: \" %s \"\n", fieldOfStudy);
+	puts("Thanks :)");
+
+	return 0;
+}
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ gcc -Wall A_E2.c
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ ./a.out
+[?2004lHello!
+My name is: ** Deni Rakovic **
+Field of Study: " History "
+Thanks :)
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ cat A_E3.c
+[?2004l#include <stdio.h>
+
+int main(void)
+{
+    puts("***************");
+    puts("*  **    **   *");
+    puts(" *    **     *");
+    puts("  * ******  *");
+    puts("   *       *");
+    puts("     *****");
+
+    return 0;
+}
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ gcc -Wall A_E3.c
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ ./a.out 
+[?2004l***************
+*  **    **   *
+ *    **     *
+  * ******  *
+   *       *
+     *****
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ cat A_E4.c
+[?2004l#include <stdio.h>
+
+int main(void)
+{
+    puts(" x value\t expressions \t results");
+    puts("| 5\t|\t| y= x+ 3  |\t| y= 8\t|");
+    puts("| 10\t|\t| y= x+ 5  |\t| y= 15\t|");
+
+    return 0;
+}[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ gcc -Wall A_E4.c
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ ./.a[K[Ka.out 
+[?2004l x value	 expressions 	 results
+| 5	|	| y= x+ 3  |	| y= 8	|
+| 10	|	| y= x+ 5  |	| y= 15	|
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ cat A_E5.c
+[?2004l#include <stdio.h>
+
+int main(void)
+{
+    printf("*\n **\n ***\n  My name is Deni Rakovic.\n  ***\n **\n*\n");
+    return 0;
+}[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ gcc -Wall A_E5.c
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ ./a.out 
+[?2004l*
+ **
+ ***
+  My name is Deni Rakovic.
+  ***
+ **
+*
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ gcc [K[K[K[Kcat A_E6.c
+[?2004l#include <stdio.h>
+
+int main(void)
+{
+    printf("Hello,\nWorld!\n");
+
+    return 0;
+}[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ gcc -Wall A_E6.c
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ ./a.out 
+[?2004lHello,
+World!
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ cat B_E7.c
+[?2004l#include <stdio.h>
+
+int main(void)
+{
+ int num1; 
+ int num2;
+ int sum;
+ 
+ printf("Enter first number: ");
+ scanf("%d", &num1);
+ printf("Enter second number: ");
+ scanf("%d", &num2);
+ sum = num1 + num2;
+
+ puts("-----------------------------------------------------------------");
+ puts("|\t\t\t\t\t\t\t\t|");
+ printf("|\t\t\t %d + %d = %d\t\t\t\t|\n",num1,num2,sum);
+ puts("|\t\t\t\t\t\t\t\t|");
+ puts("-----------------------------------------------------------------");
+ 
+ return 0;
+}
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ gcc -Wall B_E7.c
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ ./a.out 
+[?2004lEnter first number: 5
+Enter second number: 5
+-----------------------------------------------------------------
+|								|
+|			 5 + 5 = 10				|
+|								|
+-----------------------------------------------------------------
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ cat B_E7B.c
+[?2004l#include <stdio.h>
+
+int main(void)
+{
+ int num1; 
+ int num2;
+ int sum;
+ 
+ printf("Deni Rakovic,\n110081508\n");
+ printf("Enter first number: ");
+ scanf("%d", &num1);
+ printf("Enter second number: ");
+ scanf("%d", &num2);
+ sum = num1 + num2;
+
+ puts("-----------------------------------------------------------------");
+ puts("|\t\t\t\t\t\t\t\t|");
+ printf("|\t\t\t %d + %d = %d\t\t\t\t|\n",num1,num2,sum);
+ puts("|\t\t\t\t\t\t\t\t|");
+ puts("-----------------------------------------------------------------");
+ 
+ return 0;
+}[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ gcc -Wall B_E7B.c
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ ./a.out 
+[?2004lDeni Rakovic,
+110081508
+Enter first number: 5
+Enter second number: 5
+-----------------------------------------------------------------
+|								|
+|			 5 + 5 = 10				|
+|								|
+-----------------------------------------------------------------
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ cat B_E7C.c
+[?2004l#include <stdio.h>
+
+int main(void)
+{
+ int num1; 
+ int num2;
+ int sumAddition;
+ int sumSubtraction;
+ int sumMultiplication;
+ int sumDivision;
+ 
+ printf("Deni Rakovic,\n110081508\n");
+ printf("Enter first number: ");
+ scanf("%d", &num1);
+ printf("Enter second number: ");
+ scanf("%d", &num2);
+
+ sumAddition = num1 + num2;
+ sumSubtraction = num2 - num1;
+ sumMultiplication = num1 * num2;
+ sumDivision = num1 / num2;
+
+ puts("-----------------------------------------------------------------");
+ puts("|\t\t\t\t\t\t\t\t|");
+ printf("|\t\t\t %d + %d = %d\t\t\t\t|\n",num1,num2,sumAddition);
+ printf("|\t\t\t %d - %d = %d\t\t\t\t|\n",num1,num2,sumSubtraction);
+ printf("|\t\t\t %d * %d = %d\t\t\t\t|\n",num1,num2,sumMultiplication);
+ printf("|\t\t\t %d / %d = %d\t\t\t\t|\n",num1,num2,sumDivision);
+ puts("|\t\t\t\t\t\t\t\t|");
+ puts("-----------------------------------------------------------------");
+ 
+ return 0;
+}[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ gcc -Wall B_E7C.c
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ ./a.out 
+[?2004lDeni Rakovic,
+110081508
+Enter first number: 5
+Enter second number: 5
+-----------------------------------------------------------------
+|								|
+|			 5 + 5 = 10				|
+|			 5 - 5 = 0				|
+|			 5 * 5 = 25				|
+|			 5 / 5 = 1				|
+|								|
+-----------------------------------------------------------------
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab4[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab4[00m$ exit
+[?2004lexit
+
+Script done on 2021-10-22 17:51:49-04:00 [COMMAND_EXIT_CODE="0"]

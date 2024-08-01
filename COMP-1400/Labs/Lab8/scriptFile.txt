@@ -1,0 +1,132 @@
+Script started on 2021-11-16 10:19:29-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="237" LINES="9"]
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab8[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab8[00m$ cat A_bubblesort.c 
+[?2004l/*********************************************
+ * Author: Deni Rakovic                      *
+ * Date  : November 15, 2021                 *
+ * Title : Lab 8 Part A                      *
+ *********************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void)
+{
+    unsigned int n;
+    puts("Please enter a value:");
+    scanf("%d", &n);
+    //Declare array with size of n
+    unsigned int numArray[n];
+    int swaps = -1;
+    //Create new seed
+    srand(time(0));
+
+    //Set elements in numArray to a random number
+    for(int x=0;x < n;x++)
+    {
+        numArray[x] = rand() % 1000;
+    }
+
+    clock_t start = clock();
+    while(1)
+    {
+        swaps = 0;
+        for(int x=0;x < n; x++)
+        {
+            //Swap elements if [x] > [x+1]
+            if(numArray[x] > numArray[x+1])
+            {
+                long int temp = numArray[x+1];
+                numArray[x+1] = numArray[x];
+                numArray[x] = temp;
+                swaps++;
+            }
+        }
+        //If we pass through array and swaps == 0 then we know array is sorted
+        if(swaps == 0)
+            break;
+    }
+    //Get time spent in loop
+    clock_t end = clock();
+    double timeSpent = (double)(end-start);
+    //Print out array
+    for(int x = 0; x < n; x++)
+    {
+        if(x < n -1)
+            printf("%d, ", numArray[x]);
+        else //So we don't print comma after last element
+            printf("%d \n", numArray[x]);
+    }
+    printf("\nTime spent processing: %.3lf ms\n", timeSpent);
+    
+    return 0;
+}[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab8[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab8[00m$ gcc -Wall b[KA_bubblesort.c 
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab8[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab8[00m$ ./a.out
+[?2004lPlease enter a value:
+20
+0, 19, 42, 151, 204, 274, 302, 432, 470, 558, 607, 609, 614, 616, 645, 667, 760, 849, 854, 953 
+
+Time spent processing: 9.000 ms
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab8[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab8[00m$ ca [Kt B_frequency.c 
+[?2004l/*********************************************
+ * Author: Deni Rakovic                      *
+ * Date  : November 15, 2021                 *
+ * Title : Lab 8 Part B                      *
+ *********************************************/
+
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+int main(void)
+{   
+    //Declare array and new seed for rand    
+    int x[30];
+    srand(time(0));
+
+    //Generate random numbers and set values to all elements of x
+    for(int n=0;n < 30; n++)
+    {
+        x[n] = rand() % 20;
+    }
+    //Get input from user
+    puts("Enter a number between 0 - 20: ");
+    int num;
+    scanf("%d", &num);
+    //If user input is outside of range then ask for input again
+    while(num > 20 || num < 0)
+    {
+        puts("Invalid value, please enter a number between 0 and 20: ");
+        scanf("%d", &num);
+    }
+
+    //Get frequency of given number
+    int freq = 0;
+    for(int n=0;n < 30; n++)
+    {
+        if(num == x[n])
+            freq++;
+    }
+
+    //Output array
+    for(int n=0;n < 30; n++)
+    {
+        if(n < 30 - 1)
+            printf("%d, ", x[n]);
+        else
+            printf("%d \n", x[n]);
+    }
+    //Output frequency
+    printf("Frequency of %d is %d\n", num, freq);
+
+    return 0;
+}[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab8[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab8[00m$ gcc -Wall B_F[Kfrequency.c 
+[?2004l[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab8[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab8[00m$ ./a.out
+[?2004lEnter a number between 0 - 20: 
+15
+8, 14, 5, 15, 0, 9, 13, 0, 4, 15, 4, 15, 11, 0, 5, 12, 3, 14, 15, 2, 17, 3, 8, 11, 1, 13, 13, 10, 3, 12 
+Frequency of 15 is 4
+[?2004h]0;rakovic@charlie: ~/fall/comp1400/lab8[01;32mrakovic@charlie[00m:[01;34m~/fall/comp1400/lab8[00m$ exit
+[?2004lexit
+
+Script done on 2021-11-16 10:20:04-05:00 [COMMAND_EXIT_CODE="0"]

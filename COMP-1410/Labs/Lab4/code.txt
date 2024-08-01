@@ -1,0 +1,209 @@
+/* ===========================================================================
+
+COMP-1410 Lab 4
+
+=========================================================================== */
+
+
+
+#include <stdio.h>
+
+#include <assert.h>
+
+#include <string.h>
+
+
+
+// swap_to_front(str, c) swaps the last character in the string str with the
+
+//  character pointed to by c
+
+// requires: str is a valid string that can be modified, length(str) >= 1
+
+//      c points to a character in str
+
+void swap_to_front(char str[], char * c){
+
+  // the first char is str[0]
+
+   
+
+  char temp= str[0];
+
+  str[0]= *c;
+
+  *c=temp;
+
+/*
+
+whie (){
+
+strlen 
+
+}
+
+
+
+
+
+
+
+*/
+
+}
+
+
+
+// swap_to_back(str, c) swaps the last character in the string str with the
+
+//  character pointed to by c
+
+// requires: str is a valid string that can be modified, length(str) >= 1
+
+//      c points to a character in str
+
+void swap_to_back(char str[], char * c){
+
+  
+
+  int i=0;
+
+  while(str[i+1]!='\0'){
+
+     
+
+     
+
+    i++;
+
+  }
+
+   
+
+  char temp= str[i];
+
+  str[i]= *c;
+
+  *c=temp;
+
+   
+
+}
+
+
+
+
+
+
+
+
+
+int main(void) {
+
+  // Implement your test code here
+
+   
+
+  char str1[6]="apple";
+
+   
+
+  char str2[6]="ppple";
+
+   
+
+  // strcmp returns 0 when theyre the same
+
+  // a positive number when str1 comes after str2 
+
+  // a negative when str 1 comes before str2
+
+   
+
+  assert(strcmp("vivian","anything")==1);
+
+ 
+
+  assert(strcmp(str1,str2)<0);
+
+  char c='a';
+
+  swap_to_front(str2,&c);
+
+   
+
+   
+
+   
+
+  assert(strcmp(str1,str2)==0);
+
+   
+
+   
+
+   
+
+  char d='A';
+
+  //Apple
+
+  //apple Apple
+
+  //    this
+
+   swap_to_front(str2,&d);
+
+   
+
+   
+
+   assert(strcmp(str1,str2)>0);
+
+   
+
+   
+
+   
+
+  char str3[7]="goates";//goatew
+
+  char str5[7]="goatew";
+
+   
+
+   
+
+  char s='s';
+
+   char w='w';
+
+   swap_to_back(str3,&w);
+
+   assert(strcmp(str3,str5)==0);
+
+  
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+  printf("All tests passed successfully.\n");
+
+}

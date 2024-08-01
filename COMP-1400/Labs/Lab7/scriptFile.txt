@@ -1,0 +1,122 @@
+Script started on 2021-11-14 20:25:24-05:00 [TERM="xterm-256color" TTY="/dev/pts/22" COLUMNS="226" LINES="10"]
+[?2004h]0;rakovic@bravo: ~/fall/comp1400/lab7[01;32mrakovic@bravo[00m:[01;34m~/fall/comp1400/lab7[00m$ gcc -Wall guessGame.c
+[?2004l[?2004h]0;rakovic@bravo: ~/fall/comp1400/lab7[01;32mrakovic@bravo[00m:[01;34m~/fall/comp1400/lab7[00m$ cat guessGame.c
+[?2004l/*********************************************
+ * Author: Deni Rakovic                      *
+ * Date  : November 12, 2021                 *
+ * Title : Lab 7                             *
+ *********************************************/
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void)
+{
+    //Create new rand seed
+    srand(time(0));
+    //Set num to random number
+    int num = rand() % 50 + 1;
+    int userInput = 0;
+    //Counter to keep track of attempts
+    int counter = 0;
+
+    //Start while loop and get user input
+    while(userInput != num)
+    {
+        puts("Enter your guess (between 1 and 50)");
+        scanf("%d", &userInput);
+
+        //Check that user input is in between 1 and 50
+        if(userInput < 1 || userInput > 50)
+        {
+            while(userInput < 1 || userInput > 50)
+            {
+                puts("You must enter a guess between 1 and 50, please try again:");
+                scanf("%d", &userInput);
+            }
+        }
+
+        //Check number and output if it's too low, high or correct
+        if(userInput < num)
+        {
+            puts("Too low");
+        }
+        else if(userInput > num)
+        {
+            puts("Too high");
+        }
+        else if(userInput == num)
+        {
+            printf("Correct, the number was %d\n", num);
+        }
+        //increment counter so we know # of user attempts
+        counter++;
+
+        if(counter == 10)
+        {
+            //Set userInput to num to break while loop
+            userInput = num;
+            printf("Sorry, the number was %d\n", num);
+        }
+
+    }
+
+    
+
+}[?2004h]0;rakovic@bravo: ~/fall/comp1400/lab7[01;32mrakovic@bravo[00m:[01;34m~/fall/comp1400/lab7[00m$ ./a.out
+[?2004lEnter your guess (between 1 and 50)
+25
+Too low
+Enter your guess (between 1 and 50)
+40
+Too high
+Enter your guess (between 1 and 50)
+35
+Too high
+Enter your guess (between 1 and 50)
+30
+Too low
+Enter your guess (between 1 and 50)
+32
+Too low
+Enter your guess (between 1 and 50)
+35 4
+Correct, the number was 34
+[?2004h]0;rakovic@bravo: ~/fall/comp1400/lab7[01;32mrakovic@bravo[00m:[01;34m~/fall/comp1400/lab7[00m$ ./a.out
+[?2004lEnter your guess (between 1 and 50)
+1
+Too low
+Enter your guess (between 1 and 50)
+1
+Too low
+Enter your guess (between 1 and 50)
+1
+Too low
+Enter your guess (between 1 and 50)
+1
+Too low
+Enter your guess (between 1 and 50)
+1
+Too low
+Enter your guess (between 1 and 50)
+1
+Too low
+Enter your guess (between 1 and 50)
+1
+Too low
+Enter your guess (between 1 and 50)
+1
+Too low
+Enter your guess (between 1 and 50)
+1
+Too low
+Enter your guess (between 1 and 50)
+1
+Too low
+Sorry, the number was 33
+[?2004h]0;rakovic@bravo: ~/fall/comp1400/lab7[01;32mrakovic@bravo[00m:[01;34m~/fall/comp1400/lab7[00m$ exit
+[?2004lexit
+
+Script done on 2021-11-14 20:26:11-05:00 [COMMAND_EXIT_CODE="0"]

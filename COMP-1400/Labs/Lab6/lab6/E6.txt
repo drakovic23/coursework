@@ -1,0 +1,11 @@
+Why is case 2 not selected?
+Case 2 is not selected because i = 2 is never executed since it is outside of a case. When the increments are executed in case 0 or 1
+the while loop iterates and exits loop prior to case 2 being selected (since there's a break before case 2).
+
+
+For A, the while loop iterates once because there is no break in case 0 so case 1 is executed after case 0.
+So the while loop iterates, which executes the switch and then i gets incremented twice from case 0 - case 1.
+Then the while loop checks i < 2 which is true and stops.
+
+For B, the while loop iterates two times. First iteration, case 0 is triggered and increments i to 1.
+Then the while loop iterates again and case 1 is triggered, incrementing i to 2. Then the while loop checks i < 2 and exits loop.

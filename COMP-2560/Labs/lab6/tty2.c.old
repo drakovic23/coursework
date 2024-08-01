@@ -1,0 +1,41 @@
+#include <fcntl.h>
+#include <unistd.h>
+int main()
+{
+	int fd_wr = open("./log.txt", O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
+	
+	char error_open[20] = "Error opening file\n";
+	if(fd_wr < 0)
+		write(STDOUT_FILENO, error_open, sizeof(error_open));
+	
+
+	char buf[20] = ""; //Need to init to null str
+	ssize_t bytes_read;
+	
+	while((bytes_read = read(STDIN_FILENO, buf, sizeof(buf))) > 0)
+	{
+		if((buf[0] == 'E' && buf[1] == 'N' && buf[2] == 'D'))
+		{
+			close(fd_wr);
+			break;
+		}
+
+		write(fd_wr, buf, sizeof(bytes_read));
+
+		int index = 0;
+		while(buf[index])
+		{
+			buf[index] = '\0';
+			index++;
+		}
+	}
+
+	char error_read[20] = "Error reading file\n";
+	if(bytes_read < 0)
+	{
+		close(fd_wr);
+		write(STDOUT_FILENO, error_read, sizeof(error_read));
+	}
+
+	return 0;
+}

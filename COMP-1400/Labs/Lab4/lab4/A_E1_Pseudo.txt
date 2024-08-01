@@ -1,0 +1,4 @@
+print Hello!\n
+print My name is: ** Deni Rakovic **\n
+print Field of Study: "History"\n
+print Thanks :)\n
