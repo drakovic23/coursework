@@ -1,0 +1,19 @@
+.data
+
+	arrayB BYTE 10h, 20h, 30h
+	arrayW WORD 1, 2, 3
+	arrayD DWORD 4, 5, 6
+
+	ptr1 PBYTE arrayB ;All of these pointers point to beginning of array(s)
+	ptr2 PWORD arrayW
+	ptr3 PDWORD arrayD
+.code
+main PROC
+
+	mov esi, ptr1
+	mov al, [esi] ; (a) AL contains 10h
+	mov esi, ptr2
+	mov ax, [esi] ; (b) AX contains 1
+	mov esi, ptr3
+	mov eax, [esi] ; (c) EAX contains 4
+

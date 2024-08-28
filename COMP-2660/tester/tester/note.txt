@@ -1,0 +1,55 @@
+TITLE
+
+; Name:
+; Date:
+; ID: 
+; Description: 
+
+INCLUDE Irvine32.inc
+INCLUDELIB Irvine32.lib
+
+.data
+
+	val1 BYTE 10h
+	val2 WORD 8000h
+	val3 DWORD 0FFFFh
+	val4 WORD 7FFFh
+	val5 DWORD ?
+	arrayW WORD 100h,200h,300h
+
+.code
+main PROC
+
+	; program syntax here
+	INC val2
+	SUB eax, val3
+	;SUB val2, val4 - This fails because direct memory to memory operations are generally not allowed
+	;Instead must use registers
+	MOV ax, val2
+	SUB ax, val4
+	MOV val2, ax
+	
+
+	;val5 = -val1 - (val2 + val4
+	MOVSX eax, val1
+	NEG eax
+	;Mov val 2 to ebx
+	MOVZX ebx, val2
+	;Add val4 to ebx
+	MOVZX ecx, val4
+	ADD ebx, ecx
+
+	SUB eax, ebx
+	MOV val5, eax
+
+	
+	;Add second element to val4
+	MOV ax, val4
+	ADD ax, [arrayW + 2]
+	MOV val4, ax
+
+
+	exit
+
+main ENDP
+END main
